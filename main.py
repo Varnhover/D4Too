@@ -105,7 +105,7 @@ print(rdkit.Chem.Draw.MolsToImage(mols))
 from PIL import Image
 s = rdkit.Chem.Draw.MolsToImage(mols)
 st.image(s)
-im = Image.open(rdkit.Chem.Draw.MolsToGridImage(mols[:8], molsPerRow=4, subImgSize=(300,200)))
+im =rdkit.Chem.Draw.MolsToGridImage(mols[:8], molsPerRow=4, subImgSize=(300,200))
 img.save('cdk2_molgrid.o.png')    
 #st.image(im)
 
