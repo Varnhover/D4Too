@@ -19,8 +19,6 @@ from crem.crem import mutate_mol
 import streamlit as st
 #from main import *
 
-n=2
-smiles='C1CCC1CO'
 
 """
 
