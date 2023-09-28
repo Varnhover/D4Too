@@ -19,7 +19,6 @@ from crem.crem import mutate_mol
 import streamlit as st
 #from main import *
 
-browser.gatherUsageStats = False
 
 """
 
