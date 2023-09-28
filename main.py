@@ -38,29 +38,6 @@ n = st.slider('Введите количество атомов, которые 
 while smiles=='' and n=='':
     
 
-def drawsvg(mol, highlightAtoms=[], highlightReplacement=False, molSize=(400, 300), kekulize=True):
-    mc = Chem.Mol(mol.ToBinary())
-    if kekulize:
-        try:
-            Chem.Kekulize(mc)
-        except:
-            mc = Chem.Mol(mol.ToBinary())
-    if not mc.GetNumConformers():
-        AllChem.Compute2DCoords(mc)
-    if highlightReplacement:
-        ids = []
-        for a in mol.GetAtoms():
-            if 'react_atom_idx' not in a.GetPropsAsDict():
-                ids.append(a.GetIdx())
-        if ids:
-            highlightAtoms = ids
-    drawer = rdMolDraw2D.MolDraw2DSVG(molSize[0], molSize[1])
-    drawer.DrawMolecule(mc, highlightAtoms=highlightAtoms)
-    drawer.FinishDrawing()
-    svg = drawer.GetDrawingText()
-    return SVG(svg.replace('svg:',''))
-
-
 with zipfile.ZipFile('dbs/replacements02_sc2.zip', 'r') as zip_ref:
     zip_ref.extractall('dbs/')
 db_fname = 'dbs/replacements02_sc2.db'
