@@ -3,7 +3,7 @@ import time
 import os
 
 os.system('pip install rdkit, IPython, crem')
-
+print("A")
 
 import rdkit.Chem.Draw
 from rdkit import Chem
