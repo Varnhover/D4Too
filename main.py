@@ -106,8 +106,8 @@ from PIL import Image
 s = rdkit.Chem.Draw.MolsToImage(mols)
 st.image(s)
 im =rdkit.Chem.Draw.MolsToGridImage(mols[:8], molsPerRow=4, subImgSize=(300,200))
-img.save('cdk2_molgrid.o.png')    
-#st.image(im)
+img.save('molgrid.png')    
+#st.image('molgrid.png')
 
 os.system('python eToxPred/etoxpred_predict.py --datafile test.smi --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
 
