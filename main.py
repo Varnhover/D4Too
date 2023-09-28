@@ -81,7 +81,6 @@ len(mols)
 #drawgrid(random.sample(mols, len(mols)), 0)
 print(rdkit.Chem.Draw.MolsToImage(mols))
 
-from PIL import Image
 s = rdkit.Chem.Draw.MolsToImage(mols)
 print('1')
 st.image(s)
