@@ -63,7 +63,7 @@ print(rdkit.Chem.Draw.MolsToImage(mols))
 
 s = rdkit.Chem.Draw.MolsToImage(mols)
 print('1')
-st.image(s)
+#st.image(s)
 print('2')
 #im=rdkit.Chem.Draw.MolsToGridImage(mols[:8], molsPerRow=4, subImgSize=(300,200), returnPNG=False)
 #im.save('molgrid.png')    
