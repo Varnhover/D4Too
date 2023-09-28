@@ -2,7 +2,7 @@ import random
 import time
 import os
 
-#import rdkit.Chem.Draw
+import rdkit.Chem.Draw
 from rdkit import Chem
 from rdkit.Chem import AllChem
 from rdkit.Chem import Draw
