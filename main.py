@@ -36,7 +36,7 @@ smiles = st.text_input('Введите SMILES молекулы')
 n = st.slider('Введите количество атомов, которые вы хотите поменять', 0,20)
 
 while smiles=='' and n=='':
-    
+    print('a')
 
 with zipfile.ZipFile('dbs/replacements02_sc2.zip', 'r') as zip_ref:
     zip_ref.extractall('dbs/')
