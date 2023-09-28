@@ -109,7 +109,7 @@ st.image(s)
 #im=rdkit.Chem.Draw.MolsToGridImage(mols[:8], molsPerRow=4, subImgSize=(300,200), returnPNG=False)
 #im.save('molgrid.png')    
 #st.image('molgrid.png')
-export PYTHONPATH="${PYTHONPATH:/ToxPred"
+os.system(export PYTHONPATH="${PYTHONPATH:/ToxPred")
 os.system('python ToxPred/etoxpred_predict.py --datafile test.smi --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
 
 
