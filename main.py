@@ -81,7 +81,9 @@ db_fname = 'dbs/replacements02_sc2.db'
 
 #O=C(C)Oc1ccccc1C(=O)O
 mol = Chem.MolFromSmiles(smiles)
-rdkit.Chem.Draw.ShowMol(mol, size=(500,500))
+#rdkit.Chem.Draw.ShowMol(mol, size=(500,500))
+img = rdkit.Chem.Draw.MolToImage(mol)
+st.image(im)
 mols = list(mutate_mol(mol, db_fname, max_size=n))
 print(mols)
 string = ''
