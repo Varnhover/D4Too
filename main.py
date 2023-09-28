@@ -8,6 +8,7 @@ from rdkit.Chem import AllChem
 from rdkit.Chem import Draw
 from rdkit.Chem.Draw import rdMolDraw2D
 from rdkit.Chem.Draw import IPythonConsole
+import zipfile
 from IPython.display import SVG, Image
 IPythonConsole.molSize = (400,300)
 IPythonConsole.ipython_useSVG=True
@@ -77,6 +78,8 @@ def drawgrid(mols, highlight=0):
         return Draw.MolsToGridImage(mols, molsPerRow=4, subImgSize=(300,200),
                                     highlightAtomLists=ids_list, useSVG=True)
 
+with zipfile.ZipFile('dbs/replacements02_sc2.zip', 'r') as zip_ref:
+    zip_ref.extractall('dbs/')
 db_fname = 'dbs/replacements02_sc2.db'
 
 #O=C(C)Oc1ccccc1C(=O)O
