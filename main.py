@@ -2,6 +2,8 @@ import random
 import time
 import os
 
+os.system('pip install rdkit, IPython, crem')
+
 import rdkit.Chem.Draw
 from rdkit import Chem
 from rdkit.Chem import AllChem
@@ -103,7 +105,6 @@ print(rdkit.Chem.Draw.MolsToImage(mols))
 s = rdkit.Chem.Draw.MolsToImage(mols)
 s.show()
 
-import os
 os.system('python eToxPred/etoxpred_predict.py --datafile test.smi --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
 
 
