@@ -13,6 +13,24 @@ IPythonConsole.ipython_useSVG=True
 
 from crem.crem import mutate_mol
 
+import streamlit as st
+#from main import *
+
+"""
+
+# D4Tool
+
+D4Tool - первая в РФ онлайн-платформа для докинга и бла бла бла бла...
+
+* Генерация молекул по заданной структуре
+* Прогноз токсичности и синтетической доступности молекул
+* Молекулярный докинг
+
+"""
+
+mol = st.text_input('Введите SMILES молекулы')
+atm = st.slider('Введите количество атомов, которые вы хотите поменять', 0,20)
+
 def drawsvg(mol, highlightAtoms=[], highlightReplacement=False, molSize=(400, 300), kekulize=True):
     mc = Chem.Mol(mol.ToBinary())
     if kekulize:
