@@ -102,8 +102,8 @@ len(mols)
 drawgrid(random.sample(mols, len(mols)), 0)
 print(rdkit.Chem.Draw.MolsToImage(mols))
 
-s = Draw.MolsToGridImage(mols[:8], molsPerRow=4, subImgSize=(300,200), useSVG=True)
-st.image(s)
+s = rdkit.Chem.Draw.MolsToImage(mols)
+st.image(drawgrid(mols))
 
 os.system('python eToxPred/etoxpred_predict.py --datafile test.smi --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
 
