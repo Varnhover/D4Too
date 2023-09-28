@@ -2,3 +2,4 @@ rdkit
 IPython
 crem
 zipfile
+pandas
