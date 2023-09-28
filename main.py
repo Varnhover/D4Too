@@ -1,6 +1,7 @@
 import random
 import time
 import os
+import pandas
 
 import rdkit.Chem.Draw
 from rdkit import Chem
