@@ -111,7 +111,8 @@ st.image(s)
 #st.image('molgrid.png')
 #os.system('export PYTHONPATH="${PYTHONPATH}:/ToxPred"')
 os.system('streamlit run ToxPred/etoxpred_predict.py [--datafile test.smi] [--modelfile dbs/etoxpred_best_model.joblib] [--outputfile results.csv]')
-st.dataframe(results.csv)
+st.dataframe(data=results.csv)
+print(results.csv)
 
 #@title PDB + SMILES input
 
