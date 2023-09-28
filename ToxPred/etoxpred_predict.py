@@ -1,5 +1,5 @@
 import argparse
-import pandas
+
 import pandas as pd
 
 from rdkit import Chem
