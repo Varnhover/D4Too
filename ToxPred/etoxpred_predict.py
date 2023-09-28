@@ -1,6 +1,6 @@
 import argparse
 
-import pandas as pd
+#import pandas as pd
 
 from rdkit import Chem
 from rdkit import rdBase
