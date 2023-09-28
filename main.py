@@ -19,6 +19,8 @@ from crem.crem import mutate_mol
 import streamlit as st
 #from main import *
 
+st.browser.gatherUsageStats = False
+
 """
 
 # D4Tool
