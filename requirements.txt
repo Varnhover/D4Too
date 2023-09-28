@@ -1,3 +1,4 @@
 rdkit
 IPython
 crem
+tkinter
