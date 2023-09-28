@@ -60,35 +60,13 @@ def drawsvg(mol, highlightAtoms=[], highlightReplacement=False, molSize=(400, 30
     return SVG(svg.replace('svg:',''))
 
 
-#def drawgrid(mols, highlight=0):
-#    """
-#    highlight: 0 - no highlight
-#               1 - highlight changed atoms
-#               2 - highlight unchanged atoms
-#    """
-#    if highlight == 0:
-#        return Draw.MolsToGridImage(mols[:8], molsPerRow=4, subImgSize=(300,200), useSVG=True)
-#    else:
-#        ids_list = []
-#        for m in mols:
-#            ids = []
-#            for a in m.GetAtoms():
-#                if 'react_atom_idx' not in a.GetPropsAsDict():
-#                    ids.append(a.GetIdx())
-#            if highlight == 1:
-#                ids_list.append(ids)
-#            elif highlight == 2:
-#                ids_list.append(list(set(range(m.GetNumAtoms())) - set(ids)))
-#        return Draw.MolsToGridImage(mols, molsPerRow=4, subImgSize=(300,200),
-#                                    highlightAtomLists=ids_list, useSVG=True)
-
 with zipfile.ZipFile('dbs/replacements02_sc2.zip', 'r') as zip_ref:
     zip_ref.extractall('dbs/')
 db_fname = 'dbs/replacements02_sc2.db'
 
 #O=C(C)Oc1ccccc1C(=O)O
 mol = Chem.MolFromSmiles(smiles)
-#rdkit.Chem.Draw.ShowMol(mol, size=(500,500))
+rdkit.Chem.Draw.ShowMol(mol, size=(500,500))
 img = rdkit.Chem.Draw.MolToImage(mol)
 st.image(img)
 mols = list(mutate_mol(mol, db_fname, max_size=n))
