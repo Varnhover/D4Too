@@ -29,8 +29,8 @@ D4Tool - первая в РФ онлайн-платформа для докин�
 
 """
 
-mol = st.text_input('Введите SMILES молекулы')
-atm = st.slider('Введите количество атомов, которые вы хотите поменять', 0,20)
+smiles = st.text_input('Введите SMILES молекулы')
+n = st.slider('Введите количество атомов, которые вы хотите поменять', 0,20)
 
 def drawsvg(mol, highlightAtoms=[], highlightReplacement=False, molSize=(400, 300), kekulize=True):
     mc = Chem.Mol(mol.ToBinary())
@@ -79,11 +79,8 @@ def drawgrid(mols, highlight=0):
 
 db_fname = 'dbs/replacements02_sc2.db'
 
-print('Please, enter your drug SMILES.')
-smiles = str(input()) #O=C(C)Oc1ccccc1C(=O)O
+#O=C(C)Oc1ccccc1C(=O)O
 mol = Chem.MolFromSmiles(smiles)
-print('Please, enter max possible number of atoms you want to change.')
-n = int(input()) #2
 rdkit.Chem.Draw.ShowMol(mol, size=(500,500))
 mols = list(mutate_mol(mol, db_fname, max_size=n))
 print(mols)
