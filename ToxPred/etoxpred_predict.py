@@ -1,6 +1,5 @@
 import argparse
-import os
-os.system(pip install pandas)
+import pandas
 import pandas as pd
 
 from rdkit import Chem
