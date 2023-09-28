@@ -58,27 +58,27 @@ def drawsvg(mol, highlightAtoms=[], highlightReplacement=False, molSize=(400, 30
     return SVG(svg.replace('svg:',''))
 
 
-def drawgrid(mols, highlight=0):
-    """
-    highlight: 0 - no highlight
-               1 - highlight changed atoms
-               2 - highlight unchanged atoms
-    """
-    if highlight == 0:
-        return Draw.MolsToGridImage(mols[:8], molsPerRow=4, subImgSize=(300,200), useSVG=True)
-    else:
-        ids_list = []
-        for m in mols:
-            ids = []
-            for a in m.GetAtoms():
-                if 'react_atom_idx' not in a.GetPropsAsDict():
-                    ids.append(a.GetIdx())
-            if highlight == 1:
-                ids_list.append(ids)
-            elif highlight == 2:
-                ids_list.append(list(set(range(m.GetNumAtoms())) - set(ids)))
-        return Draw.MolsToGridImage(mols, molsPerRow=4, subImgSize=(300,200),
-                                    highlightAtomLists=ids_list, useSVG=True)
+#def drawgrid(mols, highlight=0):
+#    """
+#    highlight: 0 - no highlight
+#               1 - highlight changed atoms
+#               2 - highlight unchanged atoms
+#    """
+#    if highlight == 0:
+#        return Draw.MolsToGridImage(mols[:8], molsPerRow=4, subImgSize=(300,200), useSVG=True)
+#    else:
+#        ids_list = []
+#        for m in mols:
+#            ids = []
+#            for a in m.GetAtoms():
+#                if 'react_atom_idx' not in a.GetPropsAsDict():
+#                    ids.append(a.GetIdx())
+#            if highlight == 1:
+#                ids_list.append(ids)
+#            elif highlight == 2:
+#                ids_list.append(list(set(range(m.GetNumAtoms())) - set(ids)))
+#        return Draw.MolsToGridImage(mols, molsPerRow=4, subImgSize=(300,200),
+#                                    highlightAtomLists=ids_list, useSVG=True)
 
 with zipfile.ZipFile('dbs/replacements02_sc2.zip', 'r') as zip_ref:
     zip_ref.extractall('dbs/')
@@ -101,7 +101,7 @@ file.close()
 mols = list(mutate_mol(mol, db_fname, return_mol=True, max_size=n))
 mols = [Chem.RemoveHs(i[1]) for i in mols]
 len(mols)
-drawgrid(random.sample(mols, len(mols)), 0)
+#drawgrid(random.sample(mols, len(mols)), 0)
 print(rdkit.Chem.Draw.MolsToImage(mols))
 
 from PIL import Image
