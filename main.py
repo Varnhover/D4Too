@@ -35,6 +35,9 @@ D4Tool - первая в РФ онлайн-платформа для докин�
 smiles = st.text_input('Введите SMILES молекулы')
 n = st.slider('Введите количество атомов, которые вы хотите поменять', 0,20)
 
+while smiles=='' and n=='':
+    
+
 def drawsvg(mol, highlightAtoms=[], highlightReplacement=False, molSize=(400, 300), kekulize=True):
     mc = Chem.Mol(mol.ToBinary())
     if kekulize:
