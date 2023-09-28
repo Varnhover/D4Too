@@ -5,7 +5,7 @@ import os
 os.system('pip install rdkit IPython crem')
 print("A")
 
-import rdkit.Chem.Draw
+#import rdkit.Chem.Draw
 from rdkit import Chem
 from rdkit.Chem import AllChem
 from rdkit.Chem import Draw
