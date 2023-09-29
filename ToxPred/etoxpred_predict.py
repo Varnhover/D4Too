@@ -11,8 +11,6 @@ import numpy as np
 from sascore import SAscore
 from joblib import load
 
-print("test")
-
 rdBase.DisableLog('rdApp.error')
 
 def myargs():
