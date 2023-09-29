@@ -35,9 +35,6 @@ D4Tool - первая в РФ онлайн-платформа для докин�
 smiles = st.text_input('Введите SMILES молекулы')
 n = st.slider('Введите количество атомов, которые вы хотите поменять', 0,20)
 
-while smiles=='' and n=='':
-    print('a')
-
 with zipfile.ZipFile('dbs/replacements02_sc2.zip', 'r') as zip_ref:
     zip_ref.extractall('dbs/')
 db_fname = 'dbs/replacements02_sc2.db'
@@ -61,13 +58,12 @@ len(mols)
 #drawgrid(random.sample(mols, len(mols)), 0)
 print(rdkit.Chem.Draw.MolsToImage(mols))
 
-print('1')
 st.image(rdkit.Chem.Draw.MolsToImage(mols))
 tox = st.button("eToxPred")
 #st.button('eToxPred', on_click=os.system('streamlit run ToxPred/etoxpred_predict.py [--datafile test.smi] [--modelfile dbs/etoxpred_best_model.joblib] [--outputfile results.csv] --browser.gatherUsageStats false'))
 if tox == True:
     os.system('streamlit run ToxPred/etoxpred_predict.py [--datafile test.smi] [--modelfile dbs/etoxpred_best_model.joblib] [--outputfile results.csv] --browser.gatherUsageStats false')
-print("V")
+    print("V")
 #st.dataframe(data=results.csv)
 print(results.csv)
 
