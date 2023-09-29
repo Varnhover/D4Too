@@ -63,9 +63,10 @@ print(rdkit.Chem.Draw.MolsToImage(mols))
 
 print('1')
 st.image(rdkit.Chem.Draw.MolsToImage(mols))
-st.button("AAA")
-st.button('eToxPred', on_click=os.system('streamlit run ToxPred/etoxpred_predict.py [--datafile test.smi] [--modelfile dbs/etoxpred_best_model.joblib] [--outputfile results.csv] --browser.gatherUsageStats false'))
-#os.system('streamlit run ToxPred/etoxpred_predict.py [--datafile test.smi] [--modelfile dbs/etoxpred_best_model.joblib] [--outputfile results.csv] --browser.gatherUsageStats false')
+tox = st.button("eToxPred")
+#st.button('eToxPred', on_click=os.system('streamlit run ToxPred/etoxpred_predict.py [--datafile test.smi] [--modelfile dbs/etoxpred_best_model.joblib] [--outputfile results.csv] --browser.gatherUsageStats false'))
+if tox = True:
+    os.system('streamlit run ToxPred/etoxpred_predict.py [--datafile test.smi] [--modelfile dbs/etoxpred_best_model.joblib] [--outputfile results.csv] --browser.gatherUsageStats false')
 print("V")
 #st.dataframe(data=results.csv)
 print(results.csv)
