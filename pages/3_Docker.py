@@ -8,7 +8,7 @@ import sklearn #==0.23.2
 st.set_page_config(page_title="D4Tool",page_icon="💊")
 
 
-st.button("eToxPred")
+st.button("D")
 
 print('Please, enter your drug SMILES.')
 smiles = str(input()) #O=C(C)Oc1ccccc1C(=O)O
