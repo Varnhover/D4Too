@@ -9,7 +9,7 @@ st.set_page_config(page_title="D4Tool",page_icon="💊")
 """
 # Определение токсичности и синтетической доступности
 """
-st.button("eToxPred")
+st.button("Предсказать токсичность")
 
 #f = open('results.csv', 'w')
 #f.write("1")
@@ -17,4 +17,4 @@ st.button("eToxPred")
 #-- browser.gatherUsageStats false
 if st.button:
     os.system('python ToxPred/etoxpred_predict.py --datafile test.smi --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
-    st.write("Kapec", pd.read_csv('results.csv'))
+    st.write(pd.read_csv('results.csv'))
