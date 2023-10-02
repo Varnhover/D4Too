@@ -15,7 +15,7 @@ st.button("Docker")
 print('Please, enter PDB protein id.')
 PDB_id = st.text_input('Введите PDB id вашего лиганда') #1GOS
 print('Please, enter SMILES of the docking molecule.')
-SMILES_or_pubchem_id = = st.text_input('Введите SMILES молекулы')) #CCOC(=O)C1=CCN(C)CC1
+SMILES_or_pubchem_id = st.text_input('Введите SMILES молекулы')) #CCOC(=O)C1=CCN(C)CC1
 
 print('Download a tar file containing all results?(y/n)')
 dwnld = st.checkbox('Download a tar file containing all results?')
