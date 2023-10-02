@@ -6,9 +6,10 @@ import pandas
 import sklearn #==0.23.2
 
 st.set_page_config(page_title="D4Tool",page_icon="💊")
+"""
+# Молекулярный докинг
+"""
 
-
-st.button("Docker")
 
 #@title PDB + SMILES input
 
@@ -23,7 +24,7 @@ if dwnld:
   download_results = True
 else:
   download_results = False
-
+st.button("Начать Докинг")
 
 import os
 import requests
