@@ -14,5 +14,5 @@ st.button("eToxPred")
 
 #-- browser.gatherUsageStats false
 if st.button:
-    os.system('python eToxPred/etoxpred_predict.py --datafile test.smi --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
+    os.system('python ToxPred/etoxpred_predict.py --datafile test.smi --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
     st.write("Kapec", pd.read_csv('results.csv'))
