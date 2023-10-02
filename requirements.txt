@@ -4,3 +4,4 @@ crem
 pandas
 joblib
 scikit-learn
+pandas
