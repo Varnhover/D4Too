@@ -6,8 +6,9 @@ import pandas
 import sklearn #==0.23.2
 
 st.set_page_config(page_title="D4Tool",page_icon="💊")
-
-
+"""
+# Определение токсичности и синтетической доступности
+"""
 st.button("eToxPred")
 
 #f = open('results.csv', 'w')
