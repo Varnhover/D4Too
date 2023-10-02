@@ -10,42 +10,16 @@ st.set_page_config(page_title="D4Tool",page_icon="💊")
 
 st.button("Docker")
 
-print('Please, enter your drug SMILES.')
-smiles = str(input()) #O=C(C)Oc1ccccc1C(=O)O
-mol = Chem.MolFromSmiles(smiles)
-print('Please, enter max possible number of atoms you want to change.')
-n = int(input()) #2
-rdkit.Chem.Draw.ShowMol(mol, size=(500,500))
-mols = list(mutate_mol(mol, db_fname, max_size=n))
-print(mols)
-string = ''
-for molecule in mols:
-  string += str(molecule)
-  string += '\n'
-file = open('test.smi', 'w')
-file.write(string)
-file.close()
-mols = list(mutate_mol(mol, db_fname, return_mol=True, max_size=n))
-mols = [Chem.RemoveHs(i[1]) for i in mols]
-len(mols)
-drawgrid(random.sample(mols, len(mols)), 0)
-print(rdkit.Chem.Draw.MolsToImage(mols))
-
-s = rdkit.Chem.Draw.MolsToImage(mols)
-s.show()
-
-os.system('python eToxPred/etoxpred_predict.py --datafile test.smi --modelfile dbs/etoxpred_best_model.joblib --outputfile results.csv')
-
-
 #@title PDB + SMILES input
 
 print('Please, enter PDB protein id.')
-PDB_id = str(input()) #1GOS
+PDB_id = = st.text_input('Введите PDB id вашего лиганда') #1GOS
 print('Please, enter SMILES of the docking molecule.')
-SMILES_or_pubchem_id = str(input()) #CCOC(=O)C1=CCN(C)CC1
+SMILES_or_pubchem_id = = st.text_input('Введите SMILES молекулы')) #CCOC(=O)C1=CCN(C)CC1
 
 print('Download a tar file containing all results?(y/n)')
-if str(input()) == 'y':
+dwnld = st.checkbox('Download a tar file containing all results?')
+if dwnld:
   download_results = True
 else:
   download_results = False
