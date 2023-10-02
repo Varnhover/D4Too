@@ -20,9 +20,9 @@ import streamlit as st
 #from main import *
 
 st.set_page_config(page_title="D4Tool",page_icon="💊")
-
+"""
 # Генерация молекул по исходным SMILES
-
+"""
 smiles = st.text_input('Введите SMILES молекулы')
 n = st.slider('Введите количество атомов, которые вы хотите поменять', 1,20)
 
