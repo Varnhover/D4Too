@@ -30,24 +30,24 @@ with zipfile.ZipFile('dbs/replacements02_sc2.zip', 'r') as zip_ref:
     zip_ref.extractall('dbs/')
 db_fname = 'dbs/replacements02_sc2.db'
 
-#O=C(C)Oc1ccccc1C(=O)O
-mol = Chem.MolFromSmiles(smiles)
-img = rdkit.Chem.Draw.MolToImage(mol)
-st.image(img)
-mols = list(mutate_mol(mol, db_fname, max_size=n))
-print(mols)
-string = ''
-for molecule in mols:
-  string += str(molecule)
-  string += '\n'
-file = open('test.smi', 'w')
-file.write(string)
-file.close()
-mols = list(mutate_mol(mol, db_fname, return_mol=True, max_size=n))
-mols = [Chem.RemoveHs(i[1]) for i in mols]
-len(mols)
-#drawgrid(random.sample(mols, len(mols)), 0)
-print(rdkit.Chem.Draw.MolsToImage(mols))
+if smiles !="":
+    #O=C(C)Oc1ccccc1C(=O)O
+    mol = Chem.MolFromSmiles(smiles)
+    img = rdkit.Chem.Draw.MolToImage(mol)
+    st.image(img)
+    mols = list(mutate_mol(mol, db_fname, max_size=n))
+    print(mols)
+    string = ''
+    for molecule in mols:
+      string += str(molecule)
+      string += '\n'
+    file = open('test.smi', 'w')
+    file.write(string)
+    file.close()
+    mols = list(mutate_mol(mol, db_fname, return_mol=True, max_size=n))
+    mols = [Chem.RemoveHs(i[1]) for i in mols]
+    len(mols)
+    print(rdkit.Chem.Draw.MolsToImage(mols))
 
-st.image(rdkit.Chem.Draw.MolsToImage(mols))
+    st.image(rdkit.Chem.Draw.MolsToImage(mols))
 
