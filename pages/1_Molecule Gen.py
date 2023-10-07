@@ -25,12 +25,13 @@ st.set_page_config(page_title="D4Tool",page_icon="💊")
 """
 smiles = st.text_input('Введите SMILES молекулы')
 n = st.slider('Введите количество атомов, которые вы хотите поменять', 1,20)
+st.button("Начать генерацию")
 
 with zipfile.ZipFile('dbs/replacements02_sc2.zip', 'r') as zip_ref:
     zip_ref.extractall('dbs/')
 db_fname = 'dbs/replacements02_sc2.db'
 
-if smiles !="":
+if st.button:
     #O=C(C)Oc1ccccc1C(=O)O
     mol = Chem.MolFromSmiles(smiles)
     img = rdkit.Chem.Draw.MolToImage(mol)
