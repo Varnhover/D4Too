@@ -1,6 +1,6 @@
 import argparse
 
-import pandas
+import pandas as pd
 
 from rdkit import Chem
 from rdkit import rdBase
@@ -9,7 +9,7 @@ from rdkit.Chem import AllChem
 import numpy as np
 
 from sascore import SAscore
-#from joblib import load
+from joblib import load
 
 rdBase.DisableLog('rdApp.error')
 
@@ -56,7 +56,7 @@ def predict(opt):
     X, smiles_list, names = load_data(opt.datafile)
     # load the saved model and make predictions
     print('...loading models')
-    clf = joblib.load(opt.modelfile)
+    clf = load(opt.modelfile)
     reg = SAscore()
     print('...starts prediction')
     for i in range(X.shape[0]):
