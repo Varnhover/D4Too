@@ -1,4 +1,5 @@
 import argparse
+import joblib
 
 import pandas as pd
 
@@ -9,7 +10,7 @@ from rdkit.Chem import AllChem
 import numpy as np
 
 from sascore import SAscore
-import load
+from joblib import load
 
 rdBase.DisableLog('rdApp.error')
 
