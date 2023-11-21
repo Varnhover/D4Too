@@ -4,4 +4,4 @@ crem
 pandas
 joblib
 scikit-learn
-pandas
+pandas as pd
