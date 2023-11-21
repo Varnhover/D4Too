@@ -9,7 +9,7 @@ from rdkit.Chem import AllChem
 import numpy as np
 
 from sascore import SAscore
-from joblib import load
+import load
 
 rdBase.DisableLog('rdApp.error')
 
