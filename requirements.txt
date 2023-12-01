@@ -3,5 +3,4 @@ IPython
 crem
 pandas
 scikit-learn
-pandas
 joblib
